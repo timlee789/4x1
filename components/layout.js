@@ -49,8 +49,16 @@ function Layout({ title, children }) {
                 </Menu.Button>
                 <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
                   <Menu.Item>
-                    <DropdownLink className="dropdown-link" href="/profile">
-                      Profile
+                    <DropdownLink className="dropdown-link" href="/productlist">
+                      Product List
+                    </DropdownLink>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <DropdownLink
+                      className="dropdown-link"
+                      href="/admin/products/productinput"
+                    >
+                      Product Management
                     </DropdownLink>
                   </Menu.Item>
                   <Menu.Item>
@@ -69,14 +77,7 @@ function Layout({ title, children }) {
                       Campaign Input
                     </DropdownLink>
                   </Menu.Item>
-                  <Menu.Item>
-                    <DropdownLink
-                      className="dropdown-link"
-                      href="/admin/products/productinput"
-                    >
-                      Product Management
-                    </DropdownLink>
-                  </Menu.Item>
+
                   {/* {session.user.isAdmin && (
                     <Menu.Item>
                       <DropdownLink
