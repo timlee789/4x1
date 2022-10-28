@@ -124,7 +124,7 @@ export default function AdminProductEditScreen() {
       });
       dispatch({ type: 'UPDATE_SUCCESS' });
       toast.success('Product updated successfully');
-      router.push('/admin/productinput');
+      router.push('/admin/products/productinput');
     } catch (err) {
       dispatch({ type: 'UPDATE_FAIL', payload: getError(err) });
       toast.error(getError(err));

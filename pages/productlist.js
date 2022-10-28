@@ -29,7 +29,7 @@ export default function CampaignHistoryScreen() {
     const fetchOrders = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/campaign/campaignhistory`);
+        const { data } = await axios.get(`/api/product/producthistory`);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
@@ -41,7 +41,7 @@ export default function CampaignHistoryScreen() {
   const editHandler = () => {};
   return (
     <Layout title="Order History">
-      <h1 className="mb-4 text-xl">Campaign History</h1>
+      <h1 className="mb-4 text-xl">Product List</h1>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
@@ -51,25 +51,28 @@ export default function CampaignHistoryScreen() {
           <table className="min-w-full">
             <thead className="border-b">
               <tr className="px-5 text-left text-lg text-bold bg-slate-200">
-                <td className="p-5 ">Event Name</td>
-                <td className="p-5 text-left">Event Period</td>
-                <td className="p-5 text-left">AD Reach</td>
-                <td className="p-5 text-left">Landing Page Visitors</td>
-                <td className="p-5 text-left">Content</td>
+                <td className="p-5 ">Product Name</td>
+                <td className="p-5 text-left">Price</td>
+                <td className="p-5 text-left">Description</td>
+                <td className="p-5 text-left">Description1</td>
+                <td className="p-5 text-left">Description2</td>
+                <td className="p-5 text-left">Product Image</td>
               </tr>
             </thead>
 
             <tbody>
               {campaigns.map((subcam) => (
                 <tr key={subcam._id} className="border-b text-lg ">
-                  <td className="p-5 ">{subcam.campaignname}</td>
-                  <td className=" p-5 ">{subcam.period}</td>
-                  <td className=" p-5 ">{subcam.reach}</td>
-                  <td className=" p-5 ">{subcam.visit}</td>
+                  <td className="p-5 ">{subcam.productname}</td>
+                  <td className=" p-5 ">{subcam.price}</td>
+                  <td className=" p-5 ">{subcam.description}</td>
+                  <td className=" p-5 ">{subcam.description1}</td>
+                  <td className=" p-5 ">{subcam.description2}</td>
+
                   <td className=" p-5 ">
                     <Image
-                      src={subcam.content}
-                      alt={subcam.campaignname}
+                      src={subcam.image}
+                      alt={subcam.productname}
                       width={100}
                       height={100}
                     />

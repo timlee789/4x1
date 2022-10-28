@@ -6,6 +6,7 @@ import { getError } from '../../../utils/error';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -26,7 +27,7 @@ export default function AdminProductScreen() {
     products: [],
     error: '',
   });
-
+  const router = useRouter();
   const {
     handleSubmit,
     register,
@@ -62,10 +63,7 @@ export default function AdminProductScreen() {
         visit,
         imageField,
       });
-
-      if (result.error) {
-        toast.error(result.error);
-      }
+      router.push('/campaignhistory');
     } catch (err) {
       toast.error(getError(err));
     }

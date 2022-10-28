@@ -29,6 +29,7 @@ function LoginScreen() {
         email,
         password,
       });
+      router.push('/productlist');
       //router.push('/admin/productinput');
       if (result.error) {
         toast.error(result.error);

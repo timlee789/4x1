@@ -6,6 +6,7 @@ import { getError } from '../../../utils/error';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -33,7 +34,7 @@ export default function AdminProductScreen() {
     formState: { errors },
     setValue,
   } = useForm();
-
+  const router = useRouter();
   useEffect(() => {
     const fetchOrders = async () => {
       try {
@@ -63,10 +64,10 @@ export default function AdminProductScreen() {
         description2,
         imageField,
       });
-
-      if (result.error) {
-        toast.error(result.error);
-      }
+      router.push('/productlist');
+      // if (result.error) {
+      //   toast.error(result.error);
+      // }
     } catch (err) {
       toast.error(getError(err));
     }
@@ -80,6 +81,7 @@ export default function AdminProductScreen() {
       await axios.delete(`/api/admin/products/${productId}`);
 
       toast.success('Product deleted successfully');
+      router.push('/productlist');
     } catch (err) {
       toast.error(getError(err));
     }

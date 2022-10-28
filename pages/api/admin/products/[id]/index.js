@@ -5,7 +5,7 @@ import db from '../../../../../utils/db';
 
 const handler = async (req, res) => {
   const session = await getSession({ req });
-  if (!session ) {
+  if (!session) {
     return res.status(401).send('signin required');
   }
 
@@ -47,24 +47,9 @@ const putHandler = async (req, res) => {
 const deleteHandler = async (req, res) => {
   await db.connect();
   const product = await Product.deleteOne({ _id: req.query.id });
-  // const product = await UsaVipStores.findOneAndUpdate(
-  //   { _id: '62db1fe8e239edf2e7033fb0' },
-  //   {
-  //     $pull: {
-  //       product: {
-  //         _id: '6356c5fa7f0a927d153fa198',
-  //       },
-  //     },
-  //   },
-  //   { $unset: { product: '' } }
-  // );
-
   await db.disconnect();
-  // if (product) {
-  res.status(404).send({ message: 'Product deleted successfully' });
-  // }
-  //return;
+
+  res.status(200).send({ message: 'Product deleted successfully' });
 };
 
 export default handler;
-
