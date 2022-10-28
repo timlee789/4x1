@@ -37,7 +37,7 @@ function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center px-4 justify-between ">
             <Link href="/">
-              <a className="text-lg font-bold">Beauty Elements</a>
+              <a className="text-lg font-bold">Beauty Elements Marketing</a>
             </Link>
 
             {status === 'loading' ? (
