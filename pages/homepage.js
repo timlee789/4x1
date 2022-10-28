@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
+//import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import Layout from '../components/layout';
+//import Layout from '../components/layout';
 
 function HomePage() {
   const [displaybanner, setDisplybanner] = useState(
