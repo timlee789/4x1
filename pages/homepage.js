@@ -43,6 +43,15 @@ function HomePage() {
       height={573}
     />
   );
+  const [display3, setDisply3] = useState(
+    <ReactPlayer
+      url="/images/4x1.mp4"
+      playing={true}
+      loop={true}
+      width={350}
+      height={573}
+    />
+  );
 
   return (
     <div className="flex justify-center bg-slate-100">

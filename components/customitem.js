@@ -17,8 +17,10 @@ export default function CustomItemScreen(props) {
       </div>
       <div>{props.productname}</div>
       <div>{props.price}</div>
+      <div>{props.description}</div>
       <div>{props.description1}</div>
-      <div>{props.user}</div>
+      <div>{props.description2}</div>
+      {/* <div>{props.user}</div> */}
     </div>
   );
 }
