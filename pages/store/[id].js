@@ -13,18 +13,14 @@ function StoreScreen({ store, head }) {
   return (
     <Layout>
       <div>
-        <header>
-          <nav className=" lg:flex h-4 items-center px-2 justify-center mt-20">
-            <a className="text-md font-bold lg:text-3xl lg:text-center"></a>
-            {head.map((heads) => (
-              <HeadBanner key={heads._id} img1={heads.img1} />
-            ))}
-          </nav>
-        </header>
+        {head.map((heads) => (
+          <HeadBanner key={heads._id} img1={heads.img1} />
+        ))}
+
         <div className="lg:justify-center mt-4">
           <div>
-            <div className=" mt-20">
-              <div className=" grid grid-cols-2 p-5 gap-5 md:grid-cols-4 ">
+            <div>
+              <div className=" grid grid-cols-1 p-5 gap-5 md:grid-cols-4 ">
                 {store.map((sto) => (
                   <CustomItemScreen
                     key={sto._id}

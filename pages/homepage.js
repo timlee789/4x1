@@ -55,15 +55,7 @@ function HomePage() {
             height={150}
           />
         </div>
-        {/* <div className="hidden md:block">
-          <Image
-            src="/images/mainbanner3.jpg"
-            alt="banner"
-            width={1480}
-            height={330}
-            className="hidden"
-          />
-        </div> */}
+
         <div></div>
         <div>
           <div className=" grid grid-cols-2 p-5 gap-5 md:grid-cols-4 ">

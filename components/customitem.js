@@ -2,16 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 
 export default function CustomItemScreen(props) {
-
   return (
     <div>
-      <div className="flex justify-center mt-100">
+      <div className="flex justify-center ">
         <div>
           <Image
             src={props.image}
             alt="banner"
             width={300}
-            height={573}
+            height={450}
             className="element1"
           />
         </div>
