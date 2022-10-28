@@ -43,8 +43,8 @@ function Layout({ title, children }) {
             {status === 'loading' ? (
               'Loading'
             ) : session?.user ? (
-              <Menu as="div" className="relative inline-block">
-                <Menu.Button className="text-blue-600">
+              <Menu as="div" className="relative inline-block z-10">
+                <Menu.Button className="text-blue-600 font-bold text-lg">
                   {session.user.name}
                 </Menu.Button>
                 <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
